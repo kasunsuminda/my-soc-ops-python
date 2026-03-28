@@ -1,25 +1,160 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
-
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
+<div class="flex flex-col min-h-full" style="background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);">
+    
+    <!-- Hero Section -->
+    <section class="flex-1 flex flex-col items-center justify-center px-6 py-8 text-center" style="background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 50%, #0f0f0f 100%);">
+        <!-- Large Title with Shadow -->
+        <div style="margin-bottom: 1.5rem;">
+            <h1 class="chalk-text" style="font-size: 4.5rem; font-weight: 900; letter-spacing: 2px; margin: 0;">SOC OPS</h1>
+            <div style="height: 4px; width: 120px; background: linear-gradient(90deg, #ff6b6b, #ffd54f); margin: 1rem auto; border-radius: 2px;"></div>
         </div>
 
-        <button
-            hx-post="/start"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
-        </button>
-    </div>
+        <!-- Tagline -->
+        <p class="chalk-subtitle" style="font-size: 1.5rem; margin-bottom: 2rem; max-width: 400px;">
+            🎲 Break the Ice.<br/>Make Connections.<br/>Get 5 in a Row! 🎉
+        </p>
+
+        <!-- Mini Board Preview -->
+        <div style="margin-bottom: 2rem; background: linear-gradient(135deg, #f5e6d3 0%, #e8d6c4 100%); border: 3px solid #8b7355; border-radius: 8px; padding: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.4); width: 100%; max-width: 200px;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;">
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #fff8f0 0%, #faf4ee 100%); border: 2px solid #d4a574; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Loves coffee</div>
+                <div style="aspect-ratio: 1; background: radial-gradient(circle at 30% 30%, #fff59d, #ffd54f); border: 2px solid #ffb74d; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Travels</div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #fff8f0 0%, #faf4ee 100%); border: 2px solid #d4a574; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Plays games</div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #fff8f0 0%, #faf4ee 100%); border: 2px solid #d4a574; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Dog person</div>
+                <div style="aspect-ratio: 1; background: radial-gradient(circle at 30% 30%, #fff59d, #ffd54f); border: 2px solid #ffb74d; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Cat person</div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #fff8f0 0%, #faf4ee 100%); border: 2px solid #d4a574; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Loves pizza</div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #fff8f0 0%, #faf4ee 100%); border: 2px solid #d4a574; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Night owl</div>
+                <div style="aspect-ratio: 1; background: radial-gradient(circle at 30% 30%, #fff59d, #ffd54f); border: 2px solid #ffb74d; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Early bird</div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #fff8f0 0%, #faf4ee 100%); border: 2px solid #d4a574; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; text-align: center; padding: 2px; color: #333; font-weight: bold;">Fitness fan</div>
+            </div>
+            <p style="text-align: center; color: #666; font-size: 0.7rem; margin-top: 8px; font-weight: bold;">← Example board</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section style="background: linear-gradient(135deg, #36454f 0%, #2c3e50 100%); padding: 2rem 1.5rem; border-top: 3px solid #ffd54f;">
+        <div style="max-width: 500px; margin: 0 auto;">
+            <h2 class="chalk-text" style="text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">Why Play Soc Ops?</h2>
+            
+            <div style="display: grid; gap: 1rem;">
+                <!-- Feature 1 -->
+                <div style="background: rgba(255, 213, 79, 0.1); border-left: 4px solid #ffd54f; padding: 1rem; border-radius: 4px;">
+                    <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">⚡ Fast Setup</p>
+                    <p style="color: #e0e0d0; margin: 0; font-size: 0.9rem;">No prep needed. Load the app and start playing immediately.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div style="background: rgba(255, 213, 79, 0.1); border-left: 4px solid #ffd54f; padding: 1rem; border-radius: 4px;">
+                    <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">🎉 Gets Everyone Talking</p>
+                    <p style="color: #e0e0d0; margin: 0; font-size: 0.9rem;">Natural icebreaker that brings people together and sparks real conversations.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div style="background: rgba(255, 213, 79, 0.1); border-left: 4px solid #ffd54f; padding: 1rem; border-radius: 4px;">
+                    <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">🏆 Competitive Fun</p>
+                    <p style="color: #e0e0d0; margin: 0; font-size: 0.9rem;">Racing to get 5 in a row adds friendly competition to any event.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div style="background: rgba(255, 213, 79, 0.1); border-left: 4px solid #ffd54f; padding: 1rem; border-radius: 4px;">
+                    <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">📱 Works Everywhere</p>
+                    <p style="color: #e0e0d0; margin: 0; font-size: 0.9rem;">Mobile-friendly. Open in your browser on phones, tablets, or laptops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section style="padding: 2rem 1.5rem; background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);">
+        <div style="max-width: 500px; margin: 0 auto;">
+            <h2 class="chalk-text" style="text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">How to Play</h2>
+            
+            <div style="display: grid; gap: 1rem;">
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: #ff6b6b; color: white; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                    <div>
+                        <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.25rem 0;">Load Your Card</p>
+                        <p style="color: #c5c5c0; margin: 0; font-size: 0.9rem;">Get a random 5×5 bingo card with fun questions.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: #ff6b6b; color: white; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                    <div>
+                        <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.25rem 0;">Find Matches</p>
+                        <p style="color: #c5c5c0; margin: 0; font-size: 0.9rem;">Mingle and find people who match each question on your card.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: #ff6b6b; color: white; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                    <div>
+                        <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.25rem 0;">Tap & Mark</p>
+                        <p style="color: #c5c5c0; margin: 0; font-size: 0.9rem;">Tap a square when you find a match. The square turns golden!</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: #ff6b6b; color: white; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</div>
+                    <div>
+                        <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.25rem 0;">Win!</p>
+                        <p style="color: #c5c5c0; margin: 0; font-size: 0.9rem;">Get 5 marked squares in a row (horizontally, vertically, or diagonally).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%); text-align: center;">
+        <p style="color: #c5c5c0; font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+            Perfect for team events 🎯 • Conference mixers 🏢 • Classroom icebreakers 📚 • Any gathering! 🎉
+        </p>
+
+        <!-- Game Mode Selection -->
+        <div style="display: grid; gap: 1rem; max-width: 400px; margin: 0 auto 2rem;">
+            <!-- Bingo Mode Button -->
+            <div style="text-align: left; background: rgba(255, 213, 79, 0.05); border-left: 4px solid #ff6b6b; padding: 1rem; border-radius: 4px;">
+                <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">🎲 Classic Bingo</p>
+                <p style="color: #c5c5c0; margin: 0 0 1rem 0; font-size: 0.9rem;">Get 5 in a row on a 5×5 grid. Traditional bingo gameplay.</p>
+                <button
+                    hx-post="/start"
+                    hx-target="#game-container"
+                    hx-swap="outerHTML"
+                    class="sticker-button py-2 px-4 rounded-lg text-sm" style="width: 100%; font-size: 0.95rem;">
+                    Play Bingo
+                </button>
+            </div>
+
+            <!-- Hunt Mode Button -->
+            <div style="text-align: left; background: rgba(255, 213, 79, 0.05); border-left: 4px solid #4ade80; padding: 1rem; border-radius: 4px;">
+                <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">🔍 Scavenger Hunt</p>
+                <p style="color: #c5c5c0; margin: 0 0 1rem 0; font-size: 0.9rem;">Check off items from a list. Find everyone who matches!</p>
+                <button
+                    hx-post="/hunt/start"
+                    hx-target="#game-container"
+                    hx-swap="outerHTML"
+                    class="sticker-button py-2 px-4 rounded-lg text-sm" style="width: 100%; font-size: 0.95rem;">
+                    Start Hunt
+                </button>
+            </div>
+
+            <!-- Card Deck Mode Button -->
+            <div style="text-align: left; background: rgba(255, 213, 79, 0.05); border-left: 4px solid #a78bfa; padding: 1rem; border-radius: 4px;">
+                <p style="color: #ffd54f; font-weight: bold; margin: 0 0 0.5rem 0;">🎰 Card Deck Shuffle</p>
+                <p style="color: #c5c5c0; margin: 0 0 1rem 0; font-size: 0.9rem;">Shuffle through random cards. Great for quick icebreakers!</p>
+                <button
+                    hx-post="/card/start"
+                    hx-target="#game-container"
+                    hx-swap="outerHTML"
+                    class="sticker-button py-2 px-4 rounded-lg text-sm" style="width: 100%; font-size: 0.95rem;">
+                    Shuffle Cards
+                </button>
+            </div>
+        </div>
+
+        <p style="color: #6b7280; font-size: 0.8rem;">No login required • Free to use • Takes 5 minutes</p>
+    </section>
+
 </div>
 </div>

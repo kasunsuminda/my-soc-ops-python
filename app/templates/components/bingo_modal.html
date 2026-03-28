@@ -1,14 +1,14 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">🎉</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p class="text-gray-600 mb-6">You completed a line!</p>
+<div class="bingo-modal">
+    <div class="bingo-modal-content max-w-xs w-full text-center">
+        <div class="text-6xl mb-4" style="animation: bounce 0.8s ease-out;">✨🎉✨</div>
+        <h2 class="font-bold text-white mb-2" style="font-size: 3rem;">BINGO!</h2>
+        <p class="text-white mb-6" style="font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">You completed a line! 🌟</p>
 
         <button
             hx-post="/dismiss-modal"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors">
+            class="w-full sticker-button py-3 px-6 rounded-lg text-base">
             Keep Playing
         </button>
     </div>

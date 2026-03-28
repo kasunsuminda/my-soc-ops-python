@@ -8,6 +8,13 @@ class GameState(StrEnum):
     START = "start"
     PLAYING = "playing"
     BINGO = "bingo"
+    HUNT_COMPLETE = "hunt_complete"
+
+
+class GameMode(StrEnum):
+    BINGO = "bingo"
+    SCAVENGER_HUNT = "scavenger_hunt"
+    CARD_DECK_SHUFFLE = "card_deck_shuffle"
 
 
 class BingoSquareData(BaseModel):
@@ -29,3 +36,22 @@ class BingoLine(BaseModel):
     type: Literal["row", "column", "diagonal"] = "row"
     index: int = 0
     squares: list[int] = []
+
+
+class HuntItem(BaseModel):
+    """A single item in a scavenger hunt."""
+
+    model_config = ConfigDict(frozen=True)
+
+    id: int
+    text: str
+    is_found: bool = False
+
+
+class CardData(BaseModel):
+    """A single card in the deck shuffle mode."""
+
+    model_config = ConfigDict(frozen=True)
+
+    id: int
+    text: str
